@@ -1,0 +1,215 @@
+ {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  background-color: #F4F4F9;
+  color: var(--dark);
+  min-height: 100vh;
+}
+
+/* Navegación Lateral */
+aside {
+  width: var(--sidebar-width);
+  background-color: var(--primary);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+aside .brand {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+  border-bottom: 2px solid var(--secondary);
+  padding-bottom: 0.5rem;
+}
+
+aside nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  display: block;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+aside nav a:hover, aside nav a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--accent);
+}
+
+/* Área Principal */
+main {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  color: var(--dark);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.1s;
+}
+
+.btn-accent:hover {
+  transform: translateY(-2px);
+}
+
+/* Tarjetas Métricas */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-top: 4px solid var(--secondary);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.card.highlight {
+  border-top-color: var(--primary);
+}
+
+.card p {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.card h3 {
+  font-size: 1.6rem;
+}
+
+/* Tabla de Transacciones */
+.table-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.table-container h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th {
+  background-color: var(--secondary);
+  color: var(--dark);
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+}
+
+td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #EEE;
+  font-size: 0.9rem;
+}
+
+.badge-ingreso {
+  background-color: #E6F4EA;
+  color: #137333;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.badge-gasto {
+  background-color: #FCE8E6;
+  color: var(--primary);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+```
+
+```
+<section class="cards-grid">
+  <div class="card highlight">
+    <p>Balance Total</p>
+    <h3>$24,500.00</h3>
+  </div>
+  <div class="card">
+    <p>Ingresos del Mes</p>
+    <h3>$38,200.00</h3>
+  </div>
+  <div class="card">
+    <p>Gastos del Mes</p>
+    <h3>$13,700.00</h3>
+  </div>
+</section>
+
+<section class="table-container">
+  <h2>Últimos Movimientos</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Descripción</th>
+        <th>Categoría</th>
+        <th>Tipo</th>
+        <th>Monto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>01/09/2026</td>
+        <td>Pago Factura #1042</td>
+        <td>Ventas</td>
+        <td><span class="badge-ingreso">Ingreso</span></td>
+        <td>+$1,500.00</td>
+      </tr>
+      <tr>
+        <td>31/08/2026</td>
+        <td>Renta de Oficina</td>
+        <td>Servicios</td>
+        <td><span class="badge-gasto">Gasto</span></td>
+        <td>-$800.00</td>
+      </tr>
+      <tr>
+        <td>30/08/2026</td>
+        <td>Suscripción Software</td>
+        <td>Tecnología</td>
+        <td><span class="badge-gasto">Gasto</span></td>
+        <td>-$150.00</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
